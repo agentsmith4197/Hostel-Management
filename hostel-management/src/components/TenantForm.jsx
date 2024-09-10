@@ -5,7 +5,9 @@ import 'aos/dist/aos.css'; // Import AOS styles
 
 const TenantForm = ({ onSubmit, tenant }) => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
+    otherName: '',
     roomNumber: '',
     checkIn: '',
     checkOut: '',
@@ -42,16 +44,38 @@ const TenantForm = ({ onSubmit, tenant }) => {
       data-aos-duration="1000"
     >
       <h2 className="text-2xl font-bold mb-6 text-center">
-        {tenant ? 'Edit Tenant' : 'Add New Tenant'}
+        {tenant ? 'Edit Students' : 'Add New Students'}
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-gray-700">Tenant Name</label>
+          <label className="block text-gray-700">Students Last Name</label>
           <input
             type="text"
             name="name"
-            placeholder="Enter Tenant Name"
-            value={formData.name}
+            placeholder="Enter Students last Name"
+            value={formData.lastName}
+            onChange={handleChange}
+            className="border border-gray-300 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700">Students First Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter Students first Name"
+            value={formData.firstName}
+            onChange={handleChange}
+            className="border border-gray-300 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700">Students Other Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter Students other Name"
+            value={formData.otherName}
             onChange={handleChange}
             className="border border-gray-300 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -104,7 +128,7 @@ const TenantForm = ({ onSubmit, tenant }) => {
           type="submit"
           className="bg-green-500 text-white py-3 rounded-lg w-full hover:bg-green-600 transition duration-300"
         >
-          {tenant ? 'Update Tenant' : 'Add Tenant'}
+          {tenant ? 'Update Student' : 'Add Student'}
         </button>
       </form>
     </div>

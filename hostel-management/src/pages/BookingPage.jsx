@@ -12,7 +12,7 @@ const BookingPage = () => {
   };
 
   return (
-    <div>
+    <div className='bg-gray-300'>
       <BookingForm onSubmit={handleBookingSubmit} />
       <h2 className="text-xl mt-6">Bookings:</h2>
       <ul className="list-disc pl-6">

@@ -1,4 +1,3 @@
-// src/pages/PaymentsPage.js
 import React, { useState } from 'react';
 import PaymentForm from '../components/PaymentForm';
 import PaymentHistory from '../components/PaymentHistory';
@@ -22,8 +21,9 @@ const PaymentsPage = () => {
   };
 
   return (
-    <div>
+    <div className="bg-gray-300 p-4 min-h-screen">
       <h1 className="text-2xl font-bold mb-4">Manage Payments</h1>
+      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {tenants.map((tenant) => (
           <div key={tenant.id} className="border p-4 rounded-lg shadow">
@@ -55,10 +55,22 @@ const PaymentsPage = () => {
       </div>
 
       {selectedTenant && (
-        <div className="mt-8">
-          <h2 className="text-xl font-bold">Payment for {selectedTenant.name}</h2>
-          <PaymentHistory tenant={selectedTenant} />
-          <PaymentForm tenant={selectedTenant} onSubmit={handleAddPayment} />
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Payment History on the left */}
+          <div>
+            <h2 className="text-xl font-bold mb-4">
+              Payment History for {selectedTenant.name}
+            </h2>
+            <PaymentHistory tenant={selectedTenant} />
+          </div>
+
+          {/* Payment Form on the right */}
+          <div>
+            <h2 className="text-xl font-bold mb-4">
+              Add Payment for {selectedTenant.name}
+            </h2>
+            <PaymentForm tenant={selectedTenant} onSubmit={handleAddPayment} />
+          </div>
         </div>
       )}
     </div>

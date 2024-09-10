@@ -9,7 +9,7 @@ import SettingsPage from './pages/SettingsPage';
 import Layout from './layout';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
-import PaymentForm from './components/PaymentForm';
+import PaymentsPage from './pages/PaymentsPage';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
               <Route path="/booking" element={<BookingPage/>} />
               <Route path="/tenants" element={<TenantsPage/>} />
               <Route path="/settings" element={<SettingsPage />} />
-              <Route path="/payments" element={<PaymentForm />} />
+              <Route path="/payments" element={<PaymentsPage />} />
               </Route>
             </Routes>
     </Router>

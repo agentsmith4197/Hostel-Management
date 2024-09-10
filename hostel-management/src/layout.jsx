@@ -14,7 +14,7 @@ const Layout = () => {
         <Sidebar />
 
         {/* Main Content */}
-        <main className=" lg:ml-10 mt-16">
+        <main className=" lg:ml-1 mt-16 ">
           <Outlet />
         </main>
       </div>

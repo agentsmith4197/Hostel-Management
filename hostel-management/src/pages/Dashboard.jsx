@@ -9,7 +9,7 @@ AOS.init({
 
 const Dashboard = () => {
   return (
-    <div className="p-6 space-y-8">
+    <div className="p-6 space-y-8 bg-gray-300">
       {/* Page Title */}
       <h1 className="text-3xl font-bold mb-8 text-dark-gray" data-aos="fade-up">
         Hostel Management Dashboard

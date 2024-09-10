@@ -42,8 +42,8 @@ const TenantsPage = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Manage Tenants</h1>
+    <div className='bg-gray-300 rounded-lg w-full '>
+      <h1 className="text-2xl text-center  font-bold mb-4">Manage Students</h1>
       <TenantForm onSubmit={editingTenant ? handleEditTenant : handleAddTenant} tenant={editingTenant} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         {tenants.map((tenant) => (
